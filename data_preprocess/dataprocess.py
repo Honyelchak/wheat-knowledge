@@ -17,7 +17,7 @@ def process():
         for word in f2.readlines():
             word_process = re.sub('(\s)*', '', word).replace('\n', '').replace('\r', '')
             p.append(word_process)
-        #
+
         for line in f1.readlines():
             # line_process = line.strip().replace(' ', '').rstrip().replace(' ', '').replace('\n', '').replace('\r', '')
             line_process = re.sub('(\s)*', '', line).replace("\"", "”")

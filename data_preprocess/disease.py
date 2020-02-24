@@ -34,16 +34,25 @@ def analyze_disease():
              "抗病评价": 0,
              "抗病性": 0,
              "抗性表现": 0,
-             "品质结果": 0,
+             # "品质结果": 0,
              "抗旱鉴定": 0,
              "抗病性鉴定结果": 0,
              "抗病鉴定": 0,
              "抗性评价": 0
              }
+    i = 1
     for x in col.find():
         for key in count:
             if key in x:
-                print(x[key])
+                count[key] += 1
+                print(i, " [", key, "] ", x[key])
+                i += 1
+    print(count)
+    total = 0
+    for key in count:
+        total += int(count[key])
+    print("总条数{}, 有相关信息的条数{}".format(col.count(), total))
+
 
 
 #analyze_field()
